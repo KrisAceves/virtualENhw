@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='basic.css') }}">
+    <title>{{ name }}</title>
+</head>
+<body>
+    <div style="text-align: right;">
+        
+        <img src="{{ url_for('static', filename='image.png') }}" alt="myProfileImage" style="width: 200px;">
+    </div>
+    <div>
+        <h1>{{ name }}</h1>
+        <p><small>
+
+            location: US
+        </small></p>
+        <div class="content">
+          {% for content in aboutMe %}
+            <p>{{content}}<p>
+          {% endfor %}
+        </div>
+        <button onclick="window.location.href='/links'">Useful Links!</button>
+    </div>
+</body>
+</html>
